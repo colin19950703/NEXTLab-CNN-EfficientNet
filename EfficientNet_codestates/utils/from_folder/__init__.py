@@ -1,2 +1,0 @@
-from EfficientNet_codestates.utils import from_folder
-from EfficientNet_codestates.utils.from_folder import loader

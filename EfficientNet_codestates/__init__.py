@@ -1,2 +1,0 @@
-import EfficientNet_codestates
-from EfficientNet_codestates import *

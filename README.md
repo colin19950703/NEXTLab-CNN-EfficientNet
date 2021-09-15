@@ -5,60 +5,45 @@
 
 ## Main Contributers
 - Jeongtae Shin(<a href="https://github.com/Klassikcat">@Klassikcat</a>): Project Management, Model build, Engineering
-- Jaewoong Lee(<a href="https://github.com/colin19950703">@colin19950703</a>): Augmentation, model build, Enigeering
+- Jaewoong Lee(<a href="https://github.com/colin19950703">@colin19950703</a>): Augmentation, Model build, Engineering
 - Hongkyun Kim(<a href="https://github.com/ghdrbs0302">@ghdrbs0302</a>): Data Inspection, Test data Labeling, Engineering
-
-## Installation
-````shell
-!pip install -U git+https://github.com/Klassikcat/project-NEXTLab-CNN-EfficientNet
-````
 
 ## Structure
 ````Python
-project-NEXTLab
+NEXTLab-CNN-EfficientNet
 ┖ core
-  ┖ config.py               # Tensorflow Configuration
-  ┖ utils.py
-┖ model
-  ┖ EfficientNet.py         # Model block and builder
-  ┖ initializers.py         # from EfficientNetv2 (https://arxiv.org/abs/2104.00298)
-  ┖ layer.py                # from EfficietnNetv2
-  ┖ model.py                # from EfficientNetv2
-  ┖ params.py               # from EfficientNetv2
-┖ utils
-  ┖ augmentation            # Data augmentation tools
-    ┖ augmentation.py
-    ┖ launcher_augment.py
-    ┖ launcher_classname.py
-  ┖ from_folder             
-    ┖ loader.py             # get train/valid/test dataset from directory
-  ┖ tfrecord                 
-    ┖ tfrecordMaker         # Make TFRecord
-    ┖ tfrecordViewer        # Visualize, Load TFRecord 
-  ┖ unicodeUtil.py          # Korean utilities assemble jamo
-  ┖ visuialization.py       # Plots(data distribution, heatmap)
-setup.py                    # installer
+  ┖ config.py               # Configuration.
+  ┖ utils.py                # Util 함수.
+┖ EfficientNet.ipynb        # 전체 코드 주피터 노트북 버전. 경로 수정 필요.
+  launcher_augument.py      # 이미지 증강 실행.
+  launcher_classname.py     # 이미지 클래스(레이블) 생성 실행.
+  main.py                   # EfficientNetv2 학습.
+  models.py                 # EfficientNetv2 모델 코드.
+  test.py                   # 학습된 모델 테스트 코드.
 readme.md
 ````
+
+## Model Download Link
+<a href="https://drive.google.com/file/d/1oyqjqkJCoOauqaftaJVsGL8PYKGH62xY/view?usp=sharing"> https://drive.google.com/file/d/1oyqjqkJCoOauqaftaJVsGL8PYKGH62xY/view?usp=sharing </a>
 
 
 ## Data
 ### Train/Validatation Data
-- Uses modified "자동차 차종/연식/번호판 인식용 영상" from AIHub: <a href="https://aihub.or.kr/aidata/27727"> https://aihub.or.kr/aidata/27727 </a>
-- Only uses 322 classes in "세단", "SUB", "해치백", "승합"
-- deliberately select 300 images per class  
+- AI 허브의 "자동차 차종/연식/번호판 인식용 영상" 사용: <a href="https://aihub.or.kr/aidata/27727"> https://aihub.or.kr/aidata/27727 </a>
+- "세단", "SUB", "해치백", "승합" 중 322개의 클래스만을 사용.
+- 데이터 불균형 해소를 위해 클래스 당 100, 300장의 이미지가 되도록 이미지 증강 사용.  
 
 ### Test Data
-- Road Camera dataset from NEXTLab: https://www.nextlab.ai/
-- 5016 images belonging to 80 classes
+- NEXTLab에서 제공한 도로 CCTV 영상 : https://www.nextlab.ai/
+- 80개의 클래스로 이루어진 5016개의 영상 (비공개)
 
 ## Model Structure
 <img src="./image/model.png"></a>
-- EfficientNetB0(224, 224) with 30 layer freeze
+- EfficientNetB0 모델 사용.
 
 ## Train_validation accuracy/loss
 
-### top 1 accuracy/loss
+### Top 1 accuracy/loss
 - train: 0.9051/0.2755 
 - valid: 0.8960/0.3769
 
@@ -69,8 +54,6 @@ readme.md
 <img src="./image/valacc.png">
 
 ## Further Work
-[ ] Increase valid/test accuracy by making Ensemble model
+[ ] Resize하기 전의 차량 이미지 정보를 받아 비슷한 차량 모델의 크기를 비교해 구분 ex) K3, K7 
 
-[ ] Label Smoothing
-
-[ ] Fix all false label
+[ ] 전수 검사를 통해 클래스(레이블) 오분류 수정
