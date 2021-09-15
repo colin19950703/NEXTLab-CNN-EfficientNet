@@ -14,7 +14,9 @@ NEXTLab-CNN-EfficientNet
 ┖ core
   ┖ config.py               # Configuration.
   ┖ utils.py                # Util 함수.
-┖ EfficientNet.ipynb        # 전체 코드 주피터 노트북 버전. 경로 수정 필요.
+
+┖ 
+  EfficientNet.ipynb        # 전체 코드 주피터 노트북 버전. 경로 수정 필요.
   launcher_augument.py      # 이미지 증강 실행.
   launcher_classname.py     # 이미지 클래스(레이블) 생성 실행.
   main.py                   # EfficientNetv2 학습.
