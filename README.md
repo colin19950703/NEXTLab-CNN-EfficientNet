@@ -1,9 +1,9 @@
 # NEXTLab Car Detection Project
 
-### Example
+### 예시
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kumrFpGtc3K2hfOW8VRj4-AfuQFV4HIR?usp=sharing)
 
-## Main Contributers
+## 참여자
 - Jeongtae Shin(<a href="https://github.com/Klassikcat">@Klassikcat</a>): Project Management, Model build, Engineering
 - Jaewoong Lee(<a href="https://github.com/colin19950703">@colin19950703</a>): Augmentation, Model build, Engineering
 - Hongkyun Kim(<a href="https://github.com/ghdrbs0302">@ghdrbs0302</a>): Data Inspection, Test data Labeling, Engineering
