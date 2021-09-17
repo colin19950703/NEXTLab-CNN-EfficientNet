@@ -1,14 +1,11 @@
 # NEXTLab Car Detection Project
 
-### 예시
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kumrFpGtc3K2hfOW8VRj4-AfuQFV4HIR?usp=sharing)
-
 ## 참여자
 - Jeongtae Shin(<a href="https://github.com/Klassikcat">@Klassikcat</a>): Project Management, Model build, Engineering
 - Jaewoong Lee(<a href="https://github.com/colin19950703">@colin19950703</a>): Augmentation, Model build, Engineering
 - Hongkyun Kim(<a href="https://github.com/ghdrbs0302">@ghdrbs0302</a>): Data Inspection, Test data Labeling, Engineering
 
-## Structure
+## 구조
 ````Python
 NEXTLab-CNN-EfficientNet
 ┖ core
@@ -25,11 +22,11 @@ NEXTLab-CNN-EfficientNet
 readme.md
 ````
 
-## Model Download Link
+## 모델 다운로드 링크
 <a href="https://drive.google.com/file/d/1oyqjqkJCoOauqaftaJVsGL8PYKGH62xY/view?usp=sharing"> https://drive.google.com/file/d/1oyqjqkJCoOauqaftaJVsGL8PYKGH62xY/view?usp=sharing </a>
 
 
-## Data
+## 데이터 설명
 ### Train/Validatation Data
 - AI 허브의 "자동차 차종/연식/번호판 인식용 영상" 사용: <a href="https://aihub.or.kr/aidata/27727"> https://aihub.or.kr/aidata/27727 </a>
 - "세단", "SUB", "해치백", "승합" 중 322개의 클래스만을 사용.
@@ -43,6 +40,8 @@ readme.md
 <img src="./image/model.png"></a>
 - EfficientNetB0 모델 사용.
 
+## 결과
+
 ## Train_validation accuracy/loss
 
 ### Top 1 accuracy/loss
@@ -55,7 +54,7 @@ readme.md
 
 <img src="./image/valacc.png">
 
-## Further Work
+## 문제점 및 
 [ ] Resize하기 전의 차량 이미지 정보를 받아 비슷한 차량 모델의 크기를 비교해 구분 ex) K3, K7 
 
 [ ] 전수 검사를 통해 클래스(레이블) 오분류 수정
